@@ -1,3 +1,4 @@
+// it only works on sorted array
 #include <iostream>
 using namespace std;
 void printArray(int *arr, int n){
