@@ -1,3 +1,6 @@
+// n = 412
+//output  four one two
+
 #include <iostream>
 using namespace std;
 
