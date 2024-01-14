@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-bool isPalindrome(string str, int s,  int e){
+bool isPalindrome(string str, int s){
     //base case
-    if(s > e) return true;
+    if(s > str.size()-1) return true;
     
-    if(str[s] == str[e]){
-        return checkPalindrome(str, s+1, e-1);   
+    if(str[s] == str[str.size()-1-s]){
+        return isPalindrome(str, s+1);   
     }
     else return false;
 }
@@ -14,7 +14,7 @@ bool isPalindrome(string str, int s,  int e){
 int main(){
     string name = "aabbbaa";
     
-    if(isPalindrome(name, 0, name.size() - 1)){
+    if(isPalindrome(name, 0)){
         cout << " is palindrome " << "\n\n";
     }else {
         cout << " not palindrome" << "\n\n";
