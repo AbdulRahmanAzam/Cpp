@@ -26,7 +26,8 @@ int main(){
             total += arr[i][j];
         }
         cout << "marks " << total << endl;
-        cout << "total avg " << total / 3 << endl;
+        int avg = total / 3;
+        cout << "total avg " << avg << endl;
         
         if(avg >= 90){
             cout << "Grade A \n\n" ;
