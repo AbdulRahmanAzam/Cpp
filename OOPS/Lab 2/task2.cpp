@@ -46,7 +46,7 @@ int main(){
         cin >> books[i].genre; 
     }
     cout << "To input more books then enter 1 otherwise enter 0" << endl << endl;
-
+    cin >> t;
   }
 
     cout << "To find a book then enter 1" << endl;
