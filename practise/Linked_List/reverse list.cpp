@@ -16,6 +16,7 @@ class Node{
     }
 };
 
+// to do it in a simple and right manner
 // void reverseList(Node* &head, Node* &tail){
 //     Node* curr = head;
 //     Node* prev = NULL;
@@ -30,6 +31,7 @@ class Node{
 //     head = prev;
 // }
 
+// without using forward Node
 void reverseList(Node* &head, Node* &tail) {
     Node* curr = head;
     Node* prev = NULL;
@@ -42,6 +44,23 @@ void reverseList(Node* &head, Node* &tail) {
         prev = head;  // Move prev to the current node
     }
 }
+
+// recursively (below showed for passing what arguments)
+// void reverse(Node* &head, Node* &curr, Node* &prev){
+//     if(curr == NULL){
+//         head = prev;
+//         return;
+//     }
+//     Node* forward = curr -> next;
+//     reverse(head, forward, curr);
+//     curr -> next = prev;
+// }
+// Node* reverseLinkedList(Node *head){
+//     Node* curr = head;
+//     Node* prev = NULL;
+//     reverse(head, curr, prev);
+//     return head;
+// }
 
 void insertAtTail(Node* &tail, int n){
     Node* temp = new Node(n);
