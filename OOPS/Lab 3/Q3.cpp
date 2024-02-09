@@ -11,15 +11,16 @@ class Calender{
     static const int totalmonth = 12;
     static const int days = 31;
     string arr[totalmonth][days][1];
+    int currentYear;
     
     public:
     // constructor
-    Calender(){
-        for(int i=0; i< 12; i++){
-            for(int j=0; j < 31; j++){
-                arr[i][j][0] = "";
-            }
-        }
+    Calender(int year) : currentYear(year){
+        // for(int i=0; i< 12; i++){
+        //     for(int j=0; j < 31; j++){
+        //         arr[i][j][0] = "";
+        //     }
+        // }
     }
     
     void addTask(string task, int month, int day){
@@ -54,7 +55,7 @@ class Calender{
 };
 
 int main(){
-    Calender my2024;
+    Calender my2024(2024);
     
     my2024.addTask("working on 9-feb-2024 ?", 2, 4);
     my2024.addTask("Today i will complete stack (INSHA ALLAH)",4,31);
