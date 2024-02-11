@@ -1,3 +1,5 @@
+// https://www.codingninjas.com/studio/problems/sort-a-stack_985275
+
 // it will put that value in a sorted way
 void sortedInsert(stack<int> &s, int num){
 	if(s.empty() || (s.top() < num)){
