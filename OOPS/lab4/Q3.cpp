@@ -6,35 +6,33 @@ class WeekDays {
     string Days[7];
     int CurrentDay;
 
+    void initializeDays(){
+        Days[0] = "Sunday";
+        Days[1] = "Monday";
+        Days[2] = "Tuesday";
+        Days[3] = "Wednesday";
+        Days[4] = "Thursday";
+        Days[5] = "Friday";
+        Days[6] = "Saturday";
+    }
     public:
     //default constructor
     WeekDays(void){
         CurrentDay = 0;
-        Days[0] = "Sunday";
-        Days[1] = "Monday";
-        Days[2] = "Tuesday";
-        Days[3] = "Wednesday";
-        Days[4] = "Thursday";
-        Days[5] = "Friday";
-        Days[6] = "Saturday";
+        initializeDays();
     }
     // parametrised constructor
     WeekDays(int CurrentDay){
         if(CurrentDay > 6)
-            CurrentDay %= 6;
+            CurrentDay %= 7;
             
         this->CurrentDay = CurrentDay;
-
-        Days[0] = "Sunday";
-        Days[1] = "Monday";
-        Days[2] = "Tuesday";
-        Days[3] = "Wednesday";
-        Days[4] = "Thursday";
-        Days[5] = "Friday";
-        Days[6] = "Saturday";
+        initializeDays();
     }
 
     //methods
+    
+    
     string getCurrentDay(){
         return Days[CurrentDay];
     }
@@ -52,7 +50,7 @@ class WeekDays {
     string getNthDayFromToday(int nth){
         int totalday = CurrentDay + nth;
         if(totalday > 6)
-            totalday %= 6;
+            totalday %= 7;
 
         return Days[totalday];
     }
@@ -61,7 +59,7 @@ class WeekDays {
 
 int main(){
     int n=0;
-    WeekDays W(5);
+    WeekDays W(7);
     
     cout << "current day " << W.getCurrentDay() << endl;
     cout << "next day " << W.getNextDay() << endl;
