@@ -7,9 +7,10 @@ class Book {
     string author;
     int ISBN_number;
     int total_page_count;
+    int number_of_pages = 0;
 
     public:
-    int number_of_pages;
+    
 
     // cosntructor
     Book(void){}
@@ -20,7 +21,7 @@ class Book {
         number_of_pages += add_pages;
         
         if(total_page_count <= number_of_pages){
-            cout << "You have finished the book" << endl;
+            cout << "You have finished the book" << number_of_pages << endl;
         }else{
             cout << "Total pages count " << number_of_pages << endl;
         }
