@@ -10,7 +10,7 @@ class Calender{
     private:
     static const int totalmonth = 12;
     static const int days = 31;
-    string arr[totalmonth][days][1];
+    string arr[totalmonth][days];
     int currentYear;
     
     public:
@@ -25,7 +25,7 @@ class Calender{
     
     void addTask(string task, int month, int day){
         if(month >= 1 && month <= 12 && day >= 1 && day <=31){
-            arr[month-1][day-1][0] = task;
+            arr[month-1][day-1] = task;
             cout << "task added successfull" << endl;
         }else{
             cout << "invlid input" << endl;
@@ -34,7 +34,7 @@ class Calender{
     
     void removeTask(int month, int day){
         if(month >= 1 && month <= 12 && day >= 1 && day <=31){
-            arr[month-1][day-1][0] = "";
+            arr[month-1][day-1] = "";
             cout << "Task deleted succesfully" << endl;
         }else{
             cout << "invalid input" << endl;
@@ -45,9 +45,9 @@ class Calender{
         cout << "\nTasks are \n" ;
         for(int i=0; i< 12; i++){
             for(int j=0; j< 31;j++){
-                string task = arr[i][j][0];
+                string task = arr[i][j];
                 if(!task.empty()){
-                    cout << task << endl;
+                    cout <<  "(" << i+1 << " M/" << j+1 << " D) " << task << endl;
                 }
             }
         }
