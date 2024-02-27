@@ -140,12 +140,10 @@ int main(){
     ChessBoard box1;
     box1.display();
 
-    cout << (box1.movePiece("g1","f3") ? "valid" : "invalid") << endl;
-    box1.display();
+    cout << "g1 -> f3  " << (box1.movePiece("g1","f3") ? "valid" : "invalid") << endl;
     
-    cout << (box1.movePiece("b1","c3") ? "valid" : "invalid") << endl;
-    box1.display();
+    cout << "b1 -> c3  " << (box1.movePiece("b1","c3") ? "valid" : "invalid") << endl;
 
-    cout << (box1.movePiece("a2","a4") ? "valid" : "invalid") << endl;
+    cout << "a2 -> a4  " << (box1.movePiece("a2","a4") ? "valid" : "invalid") << endl;
     box1.display();
 }
