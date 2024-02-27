@@ -26,15 +26,19 @@ class Roller_Coaster {
     }
     // setter
     void setname(string name){
+        cout << "The name of the Roller coaster is set to " << name << endl;
         this-> name = name;
     }
     void setheight(int height){
+        cout << "The height of the Roller coaster is set to " <<  height << endl;
         this -> height = height;
     }
     void setlength(int length){
+        cout << "The length of the ROller coaster is set to "<< length << endl;
         this->length = length;
     }
     void setspeed(int speed){
+        cout << "The speed of the Roller Coaster is set to " << speed << endl;
         this->speed = speed;
     }
     
@@ -55,14 +59,17 @@ class Roller_Coaster {
     int startTheRide(){
         // ride is in progress
         if(rideInProgress){
+            cout << "Ride is in prpgress " << endl;
             return -1;
         }else{ // ride is not in progress
         
             // if capacity is more than 0
             if(capacity > 0){
+                cout << "There are more seats on the ROller coaster" << endl;
                 return capacity;
             // if seats are full
             }else{
+                cout << "Ride is started" << endl;
                 rideInProgress = true;
             }
         }
@@ -70,29 +77,50 @@ class Roller_Coaster {
 
     void StopTheRide(){
         if(rideInProgress){
+
+            cout << "Ride is stopped" << endl;
             rideInProgress = false;
+            return;
         }
+        cout << "Ride is already stopped" << endl;
     }
 
-// bhand
     void unload(){
         if(!rideInProgress){
-            capacity;
+            capacity = 0;
+            cout << "Capacity unloaded" << endl;
         }
     }
 
-    void accelerate(){
+    void accelerate(){ // since my roll no is 0061 so increment 1
+        cout << "Accelerate by 1" << endl;
         speed += 1;
     }
-    void brake(){
+    void brake(){ // roll no 0061 so decrement 6
+        cout << "Brake are decellerating at 6 " << endl;
         speed -= 6;
     }
 
 };
 
 int main(){
-    // Roller_Coaster("roller coaster", 500, 2000, 20, false);
-    Roller_Coaster();
+    Roller_Coaster R1("roller coaster", 500, 2000, 20, false);
+    Roller_Coaster R2;
+
+    R2.setname("Dragon Ball Z");
+    R2.setlength(200);
+    R2.setheight(100);
+    R2.setspeed(60);
+
+    R2.load(20);
+    R2.startTheRide();
+    R2.accelerate();
+    R2.accelerate();
+    R2.accelerate();
+    R2.brake();
+    R2.StopTheRide();
+    R2.unload();
+
 
     return 0;
 }
