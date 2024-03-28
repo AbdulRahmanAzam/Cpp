@@ -43,7 +43,7 @@ class Weapon{
     }
 };
 
-class Character : public Player, virtual public Weapon{
+class Character : public Player, public Weapon{
     public:
     int level;
     string experience;
@@ -80,7 +80,7 @@ class Character : public Player, virtual public Weapon{
 };
 
 
-class Enemy : public Player, virtual public Weapon{
+class Enemy : public Player, public Weapon{
     public:
     int damage;
 
